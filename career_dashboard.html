@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+                <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
+
+    
+</head>
+<body >
+    <style>.box { justify-content:center; display:flex; flex-wrap:wrap;  } </style>
+    <div class="box">
+                <div id="9200dddbe0ba479ea423c96a708a8e1a" class="chart-container" style="width:1200px; height:600px; "></div>
+    <script>
+        var chart_9200dddbe0ba479ea423c96a708a8e1a = echarts.init(
+            document.getElementById('9200dddbe0ba479ea423c96a708a8e1a'), 'light', {renderer: 'canvas'});
+        var option_9200dddbe0ba479ea423c96a708a8e1a = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "line",
+            "name": "GE in SC",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 8,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "stackStrategy": "samesign",
+            "data": [
+                [
+                    2025,
+                    232964.40000000002
+                ],
+                [
+                    2026,
+                    325024.80000000005
+                ],
+                [
+                    2027,
+                    419572.20000000007
+                ],
+                [
+                    2028,
+                    516606.6000000001
+                ],
+                [
+                    2029,
+                    627729.0000000001
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 3,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "GE LPB to Google in NYC",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 8,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "stackStrategy": "samesign",
+            "data": [
+                [
+                    2025,
+                    306811.75
+                ],
+                [
+                    2026,
+                    458243.4
+                ],
+                [
+                    2027,
+                    613059.31
+                ],
+                [
+                    2028,
+                    813877.3400000001
+                ],
+                [
+                    2029,
+                    1017529.1300000001
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 3,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "Straight to Google in NYC",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 8,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "stackStrategy": "samesign",
+            "data": [
+                [
+                    2025,
+                    302525.65
+                ],
+                [
+                    2026,
+                    457341.56000000006
+                ],
+                [
+                    2027,
+                    615211.15
+                ],
+                [
+                    2028,
+                    816029.18
+                ],
+                [
+                    2029,
+                    1019680.97
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": true,
+                "width": 3,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "GE in SC",
+                "GE LPB to Google in NYC",
+                "Straight to Google in NYC"
+            ],
+            "selected": {},
+            "type": "scroll",
+            "show": true,
+            "left": "center",
+            "bottom": "0%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "type": "category",
+            "name": "Year",
+            "show": true,
+            "scale": false,
+            "nameLocation": "center",
+            "nameGap": 35,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "boundaryGap": false,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                2025,
+                2026,
+                2027,
+                2028,
+                2029
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "type": "value",
+            "name": "Total Wealth ($)",
+            "show": true,
+            "scale": false,
+            "nameLocation": "center",
+            "nameGap": 50,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "margin": 8,
+                "formatter": function(value) {return '$' + (value/1000).toFixed(0) + 'K';},
+                "valueAnimation": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "Total Wealth Growth",
+            "target": "blank",
+            "subtarget": "blank",
+            "left": "center",
+            "padding": [
+                10,
+                0,
+                0,
+                0
+            ],
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ],
+    "toolbox": {
+        "show": true,
+        "orient": "horizontal",
+        "itemSize": 15,
+        "itemGap": 10,
+        "left": "80%",
+        "right": "5%",
+        "feature": {
+            "saveAsImage": {},
+            "restore": {},
+            "dataView": {}
+        }
+    }
+};
+        chart_9200dddbe0ba479ea423c96a708a8e1a.setOption(option_9200dddbe0ba479ea423c96a708a8e1a);
+    </script>
+<br/>                <div id="f8f59cbca6a94fb3b366820fd07f821e" class="chart-container" style="width:1200px; height:600px; "></div>
+    <script>
+        var chart_f8f59cbca6a94fb3b366820fd07f821e = echarts.init(
+            document.getElementById('f8f59cbca6a94fb3b366820fd07f821e'), 'light', {renderer: 'canvas'});
+        var option_f8f59cbca6a94fb3b366820fd07f821e = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "Net Salary",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 72680.38095238096,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 77200.36363636363,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 79270.36363636363,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 81340.36363636363,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 89323.82608695653,
+                    "career_path": "GE in SC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE in SC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#4B69FF"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Bonus",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 3634.019047619048,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 7720.036363636364,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 7927.036363636364,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 8134.036363636364,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 13398.573913043478,
+                    "career_path": "GE in SC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE in SC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#50C878"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net RSUs",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 0.0,
+                    "career_path": "GE in SC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE in SC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FFD700"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Retirement Match",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 6650.000000000001,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 7140.000000000001,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 7350.000000000001,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 7560.000000000001,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": 8400.0,
+                    "career_path": "GE in SC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE in SC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FF6B6B"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Worth Penalty",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": -0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "GE in SC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "GE in SC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE in SC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FF0000"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Salary",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 78241.59090909091,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 105817.0,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 108441.72380952381,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 126656.93636363636,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 128978.53636363636,
+                    "career_path": "GE LPB to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE LPB to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#4B69FF"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Bonus",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 7824.159090909091,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 15872.55,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 5422.0861904761905,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 12665.693636363636,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 12897.853636363636,
+                    "career_path": "GE LPB to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE LPB to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#50C878"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net RSUs",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 63606.0,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 30242.100000000002,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 30242.100000000002,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 48755.4,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 48755.4,
+                    "career_path": "GE LPB to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE LPB to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FFD700"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Retirement Match",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 7140.000000000001,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 10500.000000000002,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 10710.000000000002,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 12740.000000000002,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": 13020.000000000002,
+                    "career_path": "GE LPB to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE LPB to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FF6B6B"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Worth Penalty",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": -0.0,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": -11000.0,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "GE LPB to Google in NYC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "GE LPB to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "GE LPB to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FF0000"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Salary",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 106460.52380952382,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 108441.72380952381,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 111083.3238095238,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 126656.93636363636,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 128978.53636363636,
+                    "career_path": "Straight to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "Straight to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#4B69FF"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Bonus",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 5323.026190476191,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 5422.0861904761905,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 5554.16619047619,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 12665.693636363636,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 12897.853636363636,
+                    "career_path": "Straight to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "Straight to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#50C878"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net RSUs",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 30242.100000000002,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 30242.100000000002,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 30242.100000000002,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 48755.4,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 48755.4,
+                    "career_path": "Straight to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "Straight to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FFD700"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Retirement Match",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": 10500.000000000002,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 10710.000000000002,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 10990.000000000002,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 12740.000000000002,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": 13020.000000000002,
+                    "career_path": "Straight to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "Straight to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FF6B6B"
+            }
+        },
+        {
+            "type": "bar",
+            "name": "Net Worth Penalty",
+            "legendHoverLink": true,
+            "data": [
+                {
+                    "value": -0.0,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "Straight to Google in NYC"
+                },
+                {
+                    "value": -0.0,
+                    "career_path": "Straight to Google in NYC"
+                }
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "Straight to Google in NYC",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "50%",
+            "barGap": "20%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "valueAnimation": false
+            },
+            "itemStyle": {
+                "color": "#FF0000"
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "Net Salary",
+                "Net Bonus",
+                "Net RSUs",
+                "Net Retirement Match",
+                "Net Worth Penalty",
+                "Net Salary",
+                "Net Bonus",
+                "Net RSUs",
+                "Net Retirement Match",
+                "Net Worth Penalty",
+                "Net Salary",
+                "Net Bonus",
+                "Net RSUs",
+                "Net Retirement Match",
+                "Net Worth Penalty"
+            ],
+            "selected": {},
+            "type": "scroll",
+            "show": true,
+            "left": "center",
+            "bottom": "0%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "formatter": function(params) {                        let value = params.value;                        let formattedValue = Math.abs(value).toLocaleString();                        if (params.seriesName === 'Net Worth Penalty') {                            formattedValue = '-$' + formattedValue;                        } else {                            formattedValue = '$' + formattedValue;                        }                        return params.data.career_path + '<br/>' +                               'Year: ' + params.name + '<br/>' +                               params.seriesName + ': ' + formattedValue;                    },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "name": "Year",
+            "show": true,
+            "scale": false,
+            "nameLocation": "center",
+            "nameGap": 35,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                2025,
+                2026,
+                2027,
+                2028,
+                2029
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "Amount ($)",
+            "show": true,
+            "scale": false,
+            "nameLocation": "center",
+            "nameGap": 50,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "margin": 8,
+                "formatter": function(value) {return '$' + (value/1000).toFixed(0) + 'K';},
+                "valueAnimation": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "Annual Compensation Breakdown by Career Path",
+            "target": "blank",
+            "subtarget": "blank",
+            "left": "center",
+            "padding": [
+                10,
+                0,
+                0,
+                0
+            ],
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_f8f59cbca6a94fb3b366820fd07f821e.setOption(option_f8f59cbca6a94fb3b366820fd07f821e);
+    </script>
+<br/>    </div>
+    <script>
+    </script>
+</body>
+</html>
