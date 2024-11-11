@@ -119,6 +119,68 @@ career_paths = {
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["SC"],
         ),
+    ],    # Google salary info from level.fyi
+        "Straight to Google in NYC": [
+        # 2025
+        CompensationPackage(
+            company="Google",
+            title="SWE II",
+            salary=(salary := 150000),
+            bonus=salary * 0.05,
+            rsu_grant=33000,
+            retirement_match_percentage=0.07,
+            tax_manager=tax_managers["NYC"],
+            income_adjustment=-27000 - 24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for Grad School Repayment + NYC Housing"
+        ),
+        # 2026
+        CompensationPackage(
+            company="Google",
+            title="SWE II",
+            salary=(salary := 153000),
+            bonus=salary * 0.05,
+            rsu_grant=33000,
+            retirement_match_percentage=0.07,
+            tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
+        ),
+        # 2027
+        CompensationPackage(
+            company="Google",
+            title="SWE II",
+            salary=(salary := 157000),
+            bonus=salary * 0.05,
+            rsu_grant=33000,
+            retirement_match_percentage=0.07,
+            tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
+        ),
+        # 2028
+        CompensationPackage(
+            company="Google",
+            title="SWE III",
+            salary=(salary := 182000),
+            bonus=salary * 0.10,
+            rsu_grant=64000,
+            retirement_match_percentage=0.07,
+            tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
+        ),
+        # 2029
+        CompensationPackage(
+            company="Google",
+            title="SWE III",
+            salary=(salary := 186000),
+            bonus=salary * 0.10,
+            rsu_grant=64000,
+            retirement_match_percentage=0.07,
+            tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
+        ),
     ],
     # Google salary info from level.fyi
     "GE LPB to Google in NYC": [
@@ -131,6 +193,7 @@ career_paths = {
             rsu_grant=532 * 300 / 2, # 532 shares * 300 $ / share --> half vests at end of 2025
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["NY"],
+            comment="NY taxes assuming remote work from Pok."
         ),
         # 2026
         CompensationPackage(
@@ -140,9 +203,9 @@ career_paths = {
             bonus=salary * 0.05 + 15000, # + Starting Bonus
             rsu_grant=33000,  
             retirement_match_percentage=0.07,
-            income_adjustment=-11000,  # Grad school payment
             tax_manager=tax_managers["NYC"],
-            comment="Net Worth Adjustment for Grad School Repayment"
+            income_adjustment=-15000 - 24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for Grad School Repayment + NYC Housing"
         ),
         # 2027
         CompensationPackage(
@@ -153,6 +216,8 @@ career_paths = {
             rsu_grant=33000,
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
         ),
         # 2028
         CompensationPackage(
@@ -162,7 +227,9 @@ career_paths = {
             bonus=salary * 0.10,
             rsu_grant=64000,
             retirement_match_percentage=0.07,
-            tax_manager=tax_managers["NYC"],
+            tax_manager=tax_managers["NYC"],           
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
         ),
         # 2029
         CompensationPackage(
@@ -173,60 +240,129 @@ career_paths = {
             rsu_grant=64000,
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
         ),
     ],
-    "Straight to Google in NYC": [
+        "GE LPB to BCG in NYC": [
         # 2025
         CompensationPackage(
-            company="Google",
-            title="SWE II",
-            salary=(salary := 150000),
-            bonus=salary * 0.05,
-            rsu_grant=33000,
+            company="GE",
+            title="LPB Engineer",
+            salary=(salary := 102000),
+            bonus=salary * 0.10,
+            rsu_grant=532 * 300 / 2, # 532 shares * 300 $ / share --> half vests at end of 2025
             retirement_match_percentage=0.07,
-            tax_manager=tax_managers["NYC"],
+            tax_manager=tax_managers["NY"],
+            comment="NY taxes assuming remote work from Pok."
         ),
         # 2026
         CompensationPackage(
-            company="Google",
-            title="SWE II",
-            salary=(salary := 153000),
-            bonus=salary * 0.05,
-            rsu_grant=33000,
+            company="BCG",
+            title="Associate",
+            salary=(salary := 122000),
+            bonus=salary * 0.06 + 10000, # + Starting Bonus  
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["NYC"],
+            income_adjustment=-15000 - 24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for Grad School Repayment + NYC Housing"
         ),
         # 2027
         CompensationPackage(
-            company="Google",
-            title="SWE II",
-            salary=(salary := 157000),
-            bonus=salary * 0.05,
-            rsu_grant=33000,
+            company="BCG",
+            title="Associate",
+            salary=(salary := 125000),
+            bonus=salary * 0.06, # + Starting Bonus  
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
         ),
         # 2028
         CompensationPackage(
-            company="Google",
-            title="SWE III",
-            salary=(salary := 182000),
-            bonus=salary * 0.10,
-            rsu_grant=64000,
+            company="BCG",
+            title="Consultant",
+            salary=(salary := 192000),
+            bonus=salary * 0.10, # + Starting Bonus  
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
         ),
         # 2029
         CompensationPackage(
-            company="Google",
-            title="SWE III",
-            salary=(salary := 186000),
-            bonus=salary * 0.10,
-            rsu_grant=64000,
+            company="BCG",
+            title="Consultant",
+            salary=(salary := 192000),
+            bonus=salary * 0.10, # + Starting Bonus  
             retirement_match_percentage=0.07,
             tax_manager=tax_managers["NYC"],
+            income_adjustment=-24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
         ),
-    ]
+    ],
+    # Datadog salary info from Tiago
+    "GE LPB to Datadog Sales in NYC": [
+        # 2025
+        CompensationPackage(
+            company="GE",
+            title="LPB Engineer",
+            salary=(salary := 102000),
+            bonus=salary * 0.10,
+            rsu_grant=532 * 300 / 2, # 532 shares * 300 $ / share --> half vests at end of 2025
+            retirement_match_percentage=0.07,
+            tax_manager=tax_managers["NY"],
+            comment="NY taxes assuming remote work from Pok."
+        ),
+        # 2026
+        CompensationPackage(
+            company="Data Dog",
+            title="Sales Engineer",
+            salary=(salary := 100000),
+            bonus=salary * 0.10 + 5000, # + Starting Bonus
+            rsu_grant=15000,  
+            retirement_match_percentage=0.02,
+            tax_manager=tax_managers["NYC"],
+            income_adjustment=-15000 - 24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for Grad School Repayment + NYC Housing"
+        ),
+        # 2027
+        CompensationPackage(
+            company="Data Dog",
+            title="Sales Engineer",
+            salary=(salary := 100000),
+            bonus=15000, # + Starting Bonus
+            rsu_grant=15000 + 15000,  
+            retirement_match_percentage=0.02,
+            tax_manager=tax_managers["NYC"],
+            income_adjustment=-15000 - 24000,  # Grad school payment + 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for Grad School Repayment + NYC Housing"
+        ),
+        # 2028
+        CompensationPackage(
+            company="Data Dog",
+            title="Sales Engineer II",
+            salary=(salary := 110000),
+            bonus=15000,
+            rsu_grant=15000+15000,
+            retirement_match_percentage=0.02,
+            tax_manager=tax_managers["NYC"],           
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
+        ),
+        # 2029
+        CompensationPackage(
+            company="Data Dog",
+            title="Sales Engineer III",
+            salary=(salary := 120000),
+            bonus=20000,
+            rsu_grant=15000+15000+15000,
+            retirement_match_percentage=0.02,
+            tax_manager=tax_managers["NYC"],           
+            income_adjustment=-24000,  # 2k/mo rent - 4k rent in GVL
+            comment="Income Adjusted for NYC Housing"
+        ),
+    ],
 }
 
 #########################################################################################################################################

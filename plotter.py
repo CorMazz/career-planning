@@ -4,6 +4,10 @@ from plotly.subplots import make_subplots
 import pandas as pd
 import numpy as np
 
+def round_to_nearest_thousand(series: pd.Series) -> pd.Series:
+    return (series / 1000).round().astype(int)
+
+
 def plot_total_wealth_progression(df: pd.DataFrame) -> go.Figure:
     """
     Creates a line chart showing total wealth progression over time for each career path.
@@ -17,66 +21,76 @@ def plot_total_wealth_progression(df: pd.DataFrame) -> go.Figure:
     fig = go.Figure()
     
     # Get unique career paths
-    career_paths = df.index.get_level_values('Category').unique()
+    career_paths = df.index.get_level_values('Career Path').unique()
     
     # Add line for each career path
     for path in career_paths:
-        path_data = df.xs(path, level='Category')
+        path_data = df.xs(path, level='Career Path')
         fig.add_trace(
             go.Scatter(
                 x=path_data.index,
-                y=path_data['Total Earned Wealth'],
+                y=round_to_nearest_thousand(path_data['Total Earned Wealth']),
                 name=path,
                 mode='lines+markers',
-                hovertemplate="Year: %{x}<br>" +
-                             "Total Wealth: $%{y:,.0f}<br>" +
+                hovertemplate= "<b>%{data.name}</b><br>"
+                            "Total Wealth: $%{y:,.0f}K<br>" +
                              "<extra></extra>"
             )
         )
     
     fig.update_layout(
         title="Total Wealth Progression by Career Path",
-        xaxis_title="Year",
-        yaxis_title="Total Wealth ($)",
-        hovermode='x unified',
-        yaxis=dict(tickprefix="$", tickformat=","),
+        hovermode='x',
+        plot_bgcolor='white',
+        yaxis=dict(
+            title="Total Wealth ($)",
+            tickprefix="$",
+            ticksuffix="K",
+            tickformat=",.0f",
+            gridcolor='lightgrey',
+            showgrid=True,
+        ),
+        xaxis=dict(
+            title="Year",
+            gridcolor='lightgrey',
+            showgrid=True,
+            dtick=1,
+        ),
         legend=dict(
             yanchor="top",
             y=0.99,
             xanchor="left",
-            x=0.01
+            x=0.01,
+            bgcolor="rgba(255, 255, 255, 0.9)",  # Semi-transparent white background
+            bordercolor="rgba(0, 0, 0, 0.3)",    # Light border
+            borderwidth=1,
+            font=dict(size=14),                  # Reduce font size if needed
+            itemsizing='constant',               # Makes legend items consistent size
+            itemwidth=30,                        # Adjust width of legend items
+            tracegroupgap=0                      # Reduces gap between legend groups
         )
     )
     
     return fig
 
-def round_to_nearest_thousand(series: pd.Series) -> pd.Series:
-    return (series / 1000).round().astype(int)
-
 def plot_annual_compensation(df: pd.DataFrame) -> go.Figure:
     """
     Creates a stacked bar chart showing compensation breakdown by year,
-    with career paths side by side within each year, including income adjustments
-    and showing net income in hover data.
-    
-    Args:
-        df (pd.DataFrame): DataFrame containing compensation data
-    
-    Returns:
-        go.Figure: Plotly figure object
+    with career paths side by side within each year.
     """
     fig = go.Figure()
     
     # Get unique years and career paths
     years = sorted(df.index.get_level_values('Year').unique())
-    career_paths = df.index.get_level_values('Category').unique()
+    career_paths = df.index.get_level_values('Career Path').unique()
     n_paths = len(career_paths)
     
-    # Calculate x positions for bars
-    bar_width = 0.25
-    spacing = 0.05
+    # Adjust spacing based on number of paths
+    total_width_per_year = 0.8  # Leave some space between years
+    bar_width = total_width_per_year / (n_paths + 1)  # Add 1 for some padding
+    spacing = bar_width * 0.2  # 20% of bar width for spacing
     
-    # Colors matching the image plus purple for income adjustment
+    # Colors for components
     colors = {
         'Net Salary': 'rgb(66, 133, 244)',      # Blue
         'Net Bonus': 'rgb(52, 168, 83)',        # Green
@@ -85,32 +99,31 @@ def plot_annual_compensation(df: pd.DataFrame) -> go.Figure:
         'Income Adjustment': 'rgb(156, 39, 176)' # Purple
     }
     
-        # Add career path labels using annotations
+    # Add career path labels
     for year in years:
         for i, path in enumerate(career_paths):
-            x_pos = year + (i - n_paths/2) * (bar_width + spacing)
+            # Center the group of bars for each year
+            x_pos = year + (i - (n_paths-1)/2) * (bar_width + spacing)
             
-            # Add path label
             fig.add_annotation(
                 x=x_pos,
-                y=-29,  # Position below x-axis
+                y=-58,
                 text=path,
                 showarrow=False,
                 textangle=-65,
-                font=dict(size=12),
+                font=dict(size=14),  # Reduced font size
                 xanchor='right',
                 yanchor='top'
             )
     
-    # Create bars for each career path within each year
+    # Create bars for each career path
     for i, path in enumerate(career_paths):
-        path_data = df.xs(path, level='Category')
-        x_positions = [year + (i - n_paths/2) * (bar_width + spacing) for year in years]
+        path_data = df.xs(path, level='Career Path')
+        # Center the group of bars for each year
+        x_positions = [year + (i - (n_paths-1)/2) * (bar_width + spacing) for year in years]
         
-        # Base components
         components = ['Net Salary', 'Net Bonus', 'Net RSUs', "Retirement Match", "Income Adjustment"]
         
-        # Common hover template with net income
         base_hover_template = (
             f"<b>Career Path: {path}</b><br>" +
             "Year: %{x:.0f}<br>" +
@@ -119,7 +132,7 @@ def plot_annual_compensation(df: pd.DataFrame) -> go.Figure:
             "<extra></extra>"
         )
         
-        # Add main compensation components
+        # Add compensation components
         for component in components:
             fig.add_trace(go.Bar(
                 name=component if i == 0 else f"{component} - {path}",
@@ -141,12 +154,9 @@ def plot_annual_compensation(df: pd.DataFrame) -> go.Figure:
             mode='markers',
             marker=dict(
                 symbol='star',
-                size=16,
+                size=14,  # Slightly reduced size
                 color='black',
-                line=dict(
-                    color='white',
-                    width=2
-                )
+                line=dict(color='white', width=1)
             ),
             legendgroup='Net Income',
             showlegend=i == 0,
@@ -162,24 +172,31 @@ def plot_annual_compensation(df: pd.DataFrame) -> go.Figure:
     fig.update_layout(
         title="Annual Compensation Breakdown by Career Path",
         xaxis=dict(
+            side="top",
             tickmode='array',
             ticktext=years,
             tickvals=years,
             gridcolor='lightgrey',
             showgrid=True,
+            tickfont=dict(size=16),
         ),
         yaxis=dict(
+            tickfont=dict(size=16),
+            titlefont=dict(size=16),
             title="Amount ($)",
             tickprefix="$",
             ticksuffix="K",
             tickformat=",.0f",
-            range=(-29.5, 210),
+            range=(-59, 210),
             gridcolor='lightgrey',
             showgrid=True,
             tick0=0,
             dtick=30,
+            zeroline=True,
+            zerolinecolor='black',
+            zerolinewidth=2,
         ),
-        barmode='relative',  # Changed to 'relative' to handle negative values
+        barmode='relative',
         plot_bgcolor='white',
         showlegend=True,
         legend=dict(
@@ -210,7 +227,7 @@ def plot_tax_burden_comparison(df: pd.DataFrame) -> go.Figure:
     # Pivot the data for the heatmap
     tax_data = df.pivot_table(
         index='Year',
-        columns='Category',
+        columns='Career Path',
         values='Effective Tax Rate'
     )
     
@@ -247,7 +264,7 @@ def plot_comprehensive_comparison(df: pd.DataFrame) -> go.Figure:
     Returns:
         go.Figure: Plotly figure object
     """
-    career_paths = df.index.get_level_values('Category').unique()
+    career_paths = df.index.get_level_values('Career Path').unique()
     years = df.index.get_level_values('Year').unique()
     
     # Create figure with secondary y-axis
@@ -263,7 +280,7 @@ def plot_comprehensive_comparison(df: pd.DataFrame) -> go.Figure:
     
     # Plot 1: Total Wealth Progression
     for path in career_paths:
-        path_data = df.xs(path, level='Category')
+        path_data = df.xs(path, level='Career Path')
         fig.add_trace(
             go.Scatter(
                 x=path_data.index,
@@ -277,7 +294,7 @@ def plot_comprehensive_comparison(df: pd.DataFrame) -> go.Figure:
     
     # Plot 2: Net Income Comparison
     for path in career_paths:
-        path_data = df.xs(path, level='Category')
+        path_data = df.xs(path, level='Career Path')
         fig.add_trace(
             go.Scatter(
                 x=path_data.index,
@@ -291,7 +308,7 @@ def plot_comprehensive_comparison(df: pd.DataFrame) -> go.Figure:
     
     # Plot 3: Tax Rates
     for path in career_paths:
-        path_data = df.xs(path, level='Category')
+        path_data = df.xs(path, level='Career Path')
         fig.add_trace(
             go.Scatter(
                 x=path_data.index,
